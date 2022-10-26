@@ -9,32 +9,38 @@
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
 </head>
 <body>
+
   <div id="app"></div>
   <script>
     window.$docsify = {
       name: '',
-      repo: ''
+      repo: '',
+
+      //文本高亮配置
+      'flexible-alerts': {style: 'flat'}
     }
   </script>
-  <!-- Docsify v4 -->
-  <script src="./scr/docsify@4.js"></script>
 
   <!--数学公式插件-->
-  <script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/marked@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/marked@4"></script>
 
-  <!-- CDN files for docsify-katex -->
-  <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
-  <!-- script src="//cdn.jsdelivr.net/gh/upupming/docsify-katex@latest/dist/docsify-katex.js"></script> -->
-
-  <script src="//cdn.jsdelivr.net/npm/docsify@latest/lib/docsify.min.js"></script>
-  <!-- script src="//unpkg.com/docsify@latest/lib/docsify.min.js"></script> -->
+    <!-- CDN files for docsify-katex -->
+    <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
+    <!-- script src="//cdn.jsdelivr.net/gh/upupming/docsify-katex@latest/dist/docsify-katex.js"></script> -->
 
 
-  <!--消息气泡插件-->
-  <script src="https://unpkg.com/docsify-plugin-flexible-alerts"></script>
-  <script>  window.$docsify = {    'flexible-alerts': {      style: 'flat'    }  };</script>
+  <!--文本高亮 （本地化）-->
+    <script src="./scr/docsify-plugin-flexible-alerts.js"></script>
+
+
+  <!-- Docsify v4 (本地化)-->
+    <script src="./scr/docsify@4.js"></script>
+
+
+
+
 
 </body>
 </html>
