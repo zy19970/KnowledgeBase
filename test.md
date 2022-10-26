@@ -1,10 +1,10 @@
 # test
 
-这是一个测试文件，首先测试一下公式：
+这是一个测试文件，首先测试一下公式： 
 $$
 \mathop {\lim }\limits_{x \to \infty } \frac{{ - b \pm \sqrt {{b^2} - 4ac} }}{{2a}}\iota \Phi
 $$
-测试行内公式$\mathop {\lim }\limits_{x \to \infty } \frac{{ - b \pm \sqrt {{b^2} - 4ac} }}{{2a}}\iota \Phi\lambda $。
+测试行内公式 $\mathop {\lim }\limits_{x \to \infty } \frac{{ - b \pm \sqrt {{b^2} - 4ac} }}{{2a}}\iota \Phi\lambda $ 。
 
 测试标题
 
