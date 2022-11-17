@@ -55,13 +55,13 @@
 
 ### ANFIS模型-模型建立建模
 
-> ?>核心观点与说明
+> ?> 经典模糊推理过程
 
 > [!Note] 
 >
 > ANFIS集成了神经网络的学习能力和模糊逻辑系统的知识表示能力[30]，可以用一组模糊规则[37]对复杂的非线性系统进行建模。本节开发了一个基于行走时 sEMG 数据的 ANFIS 模型。考虑到肌肉协同空间，我们使用肌肉协同驱动的ANFIS模型对膝关节运动进行建模。
 >
-> 以膝关节为例，利用*m*模糊规则对其关节运动进行建模，形成具有肌肉协同空间的肌肉协同驱动ANFIS模型$Y \in  {\mathbb{R}^{k \times t}}$如下：
+> 以膝关节为例，利用规则数为*m*的模糊规则对其关节运动进行建模，形成具有**肌肉协同空间的肌肉协同驱动ANFIS模型**$Y \in  {\mathbb{R}^{k \times t}}$如下：
 >
 > $$\begin{equation*} \begin{array}{rl} {R^i}:&\,\text{if}\,{y_1}\left({t - 1} \right)\,\text{is}\,M_1^i,\,{y_2}\left({t - 1} \right)\,\text{is}\,M_2^i,\ \ldots,{y_j}\left({t - 1} \right)\,\\ &\text{is}\, M_j^i,{y_1}\left(t \right)\,\,\text{is}\ \,M_{j + 1}^i,\,{y_2}\left(t \right)\,\,\text{is}\,\,M_{j + 2}^i,\ \ldots,\ {y_j}\left(t \right) \, \text{is}\,M_{2j}^i\\ &\,\,\,\,\,\,\text{then}\,\,{\theta ^i}\ \left(t \right) = \lambda _1^i\ {y_1}\left({t - 1} \right) + \lambda _2^i{y_2}\left({t - 1} \right) + \cdots \\ &\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, + \lambda _j^i{y_j}\left({t - 1} \right) + \ \lambda _{j + 1}^i{y_1}\left(t \right) + \lambda _{j + 2}^i{y_2}\left(t \right) + \cdots \\ &\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, + \lambda _{2j}^i{y_j}\left(t \right) + {\xi ^i} \end{array} \tag{2} \end{equation*}$$
 >
@@ -106,13 +106,13 @@
 
 ### ANFIS模型-模糊规则确定与参数初始化
 
-> ?>核心观点与说明
+> ?> 模糊规则推理标准过程
 
 
 
 > [!Note] 
 >
-> 模糊规则的确定和ANFIS模型参数的初始化与模型性能和训练效率密切相关。因此，采用减法聚类算法(subtractive clustering algorithm)对输入输出数据空间进行划分，用于初始化模糊规则参数[38]、[39]。使用$Z$组数据样本$\{ {\mathbf{F}_1}, \ldots,{\mathbf{F}_p}, \ldots,{\mathbf{F}_z}\}$(${F_p} = {\rm{ }}[{y_j}(t - 1),{y_j}(t)]$,$j\ = \ 1,\ 2,\ \ldots,\ k$,$p\ = \ 1,\ 2,\ \ldots,\ Z$)的膝关节，减法聚类的步骤如下。
+> 模糊规则的确定和ANFIS模型参数的初始化与模型性能和训练效率密切相关。因此，**采用减法聚类算法(subtractive clustering algorithm)**对输入输出数据空间进行划分，用于初始化模糊规则参数[38]、[39]。使用$Z$组数据样本$\{ {\mathbf{F}_1}, \ldots,{\mathbf{F}_p}, \ldots,{\mathbf{F}_z}\}$(${F_p} = {\rm{ }}[{y_j}(t - 1),{y_j}(t)]$,$j\ = \ 1,\ 2,\ \ldots,\ k$,$p\ = \ 1,\ 2,\ \ldots,\ Z$)的膝关节，减法聚类的步骤如下。
 >
 > - **第 1 步**：设置初始参数${\delta _a}$，这是聚类中心的有效邻域半径。
 >
@@ -143,7 +143,7 @@
 
 ### ANFIS模型-参数优化
 
-> ?>核心观点与说明
+> ?> 将每个参数的推导过程写出来，一看就是自己做的，增加可信度。
 
 
 
@@ -151,13 +151,13 @@
 >
 > 为了优化模型参数，采用递归最小二乘法训练结果参数$\lambda _l^i$，并利用反向传播方法训练前提参数$c _l^i$和$\sigma _l^i$[30]。
 >
-> 递归最小二乘：拟合前提参数$c _l^i$和$\sigma _l^i$，并用前向传播的膝关节数据训练结果参数$\lambda _l^i$，即
+> **递归最小二乘：**拟合前提参数$c _l^i$和$\sigma _l^i$，并用前向传播的膝关节数据训练结果参数$\lambda _l^i$，即
 > $$
 > \begin{align*} \lambda _l^i\left({t + 1} \right)& \!=\! \lambda _l^i\ \left(t \right) \!+\! {K^L}\left({t + 1} \right)\left[ {\theta \left({t + 1} \right) \!-\! {\varphi ^T}\left({t + 1} \right)\lambda _l^i\left(t \right)} \right]\\ {K^L}\left({t + 1} \right)& = \frac{{{P^L}\left(t \right)\varphi \left({t + 1} \right)}}{{1 + {\varphi ^T}\left({t + 1} \right){P^L}\left(t \right)\varphi \left({t + 1} \right)}}\\ {P^L}\left({t + 1} \right)& = \left[ {I - {K^L}\left({t + 1} \right){\varphi ^T}\left({t + 1} \right)} \right]\ {P^L}\left(t \right) \tag{11} \end{align*}
 > $$
 > 其中，${P^L}\ (0) = {q^L}\ \mathbf{I}\ \in \ {\mathbb{R}^{2n \times 2n}}$，$ {q^L}$是一个很大的正数(largely positive number)，通常取值在10e4和10e10之间，本文中取10e6。
 >
-> 反向传播：拟合结果参数$\lambda _l^i$，并使用反向传播学习算法来训练前提参数$c _l^i$和$\sigma _l^i$如下：
+> **反向传播：**拟合结果参数$\lambda _l^i$，并使用反向传播学习算法来训练前提参数$c _l^i$和$\sigma _l^i$如下：
 > $$
 > \begin{align*} c_l^i\left({t + 1} \right)\ = & c_l^i\left(t \right) - {\alpha _c}\frac{{\partial E}}{{\partial c_l^i}}\\ =& c_l^i\left(t \right) - {\alpha _c}\frac{{\partial E}}{{\partial \theta \left(t \right)}} \cdot \frac{{\partial \theta \left(t \right)}}{{\partial {\mu _{M_l^i}}}} \cdot \frac{{\partial {\mu _{M_l^i}}}}{{\partial c_l^i}}\\ =& c_l^i\left(t \right) - {\alpha _c}\left({\theta \left(t \right) - \hat{\theta }\left(t \right)} \right) \cdot \left({\theta \left(t \right) - \hat{\theta }\left(t \right)} \right)\\ &.{{\bar{\omega }}^i}\left(t \right) \cdot \frac{{{z_l}\left(t \right) - c_l^i\left(t \right)}}{{{{\left({\sigma _l^i\left(t \right)} \right)}^2}}} \tag{12}\\ \sigma _l^i\left({t + 1} \right)\ =& \sigma _l^i\left(t \right) - {\alpha _\sigma }\frac{{\partial E}}{{\partial \sigma _l^i}}\\ =& \sigma _l^i\left(t \right) - {\alpha _\sigma }\frac{{\partial E}}{{\partial \theta \left(t \right)}} \cdot \frac{{\partial \theta \left(t \right)}}{{\partial {\mu _{M_l^i}}}} \cdot \frac{{\partial {\mu _{M_l^i}}}}{{\partial \sigma _l^i}}\\ =& \sigma _l^i\left(t \right) - {\alpha _\sigma }\left({\theta \left(t \right) - \hat{\theta }\left(t \right)} \right) \cdot \left({\theta \left(t \right) - \hat{\theta }\left(t \right)} \right)\\ &.{{\bar{\omega }}^i}\left(t \right) \cdot \frac{{{z_l}\left(t \right) - c_l^i\left(t \right)}}{{{{\left({\sigma _l^i\left(t \right)} \right)}^2}}} \tag{13} \end{align*}
 > $$
@@ -167,13 +167,13 @@
 
 ### ANFIS模型-实验模型配置
 
-> ?>核心观点与说明
+> ?> 这个实验配置主要是同一个建模方法不同输入值。
 
 
 
 > [!Note] 
 >
-> 来自步行速度会话的所有五项试验的数据点被合并在一起并搅乱(shuffled)。具有肌肉协同作用空间和时域特征（MAV、WL 和 MAV+WL）的 ANFIS 建模每个会话总共有 36000 个样本数据。在建模中，我们还集成了时间$t$和$t−1$的数据作为输入，形成了ANFIS模型。
+> 来自步行速度会话的所有五项试验的数据点被合并在一起并搅乱(shuffled)。具有肌肉协同作用空间和时域特征（MAV、WL 和 MAV+WL）的 ANFIS 建模每个会话总共有 36000 个样本数据。在建模中，**我们还集成了时间$t$和$t−1$的数据作为输入，形成了ANFIS模型。**
 >
 > **肌肉协同驱动ANFIS模型**
 >
@@ -183,13 +183,28 @@
 >
 > MAV和WL是从八个肌肉通道中提取的，它们的维度是${\mathbb{R}^{8 \times 36000}}$。对于MAV或WL的输入，80%的数据集（约28800个数据点）用于对模糊规则进行建模。数据集的其余部分（大约 7200 个数据点）用作验证数据。综合(Integrating) $t$和$t−1$处的肌肉协同效应，建模过程和测试中输入的维度为$\mathbb{R}^{16×28799}$和$\mathbb{R}^{16×7199}$分别。对于MAV+WL的输入，建模过程和测试中输入的维度分别为$\mathbb{R}^{24×28799}$和$\mathbb{R}^{32×7199}$。
 >
-> 
+
+### ANFIS模型-最终结果
+
+> ?>这个结果做的很好，一眼就可以看出区别，通过表格罗列公式很棒。
+
+
+
+> [!Note] 
 >
-> 
+> 为了模拟肌肉协同作用驱动的ANFIS，五个提取的肌肉协同作用的信息在$t−1$和$t$被安排为输入变量，即$y_1(t−1),y_2(t−1),y_3(t−1),y_4(t−1),y_5(t−1),y_1(t),y_2(t),y_3(t),y_4(t)$和$y_5(t)$，预测膝盖角度$\theta (t)$。根据模糊规则确定和模型初始化方案，使用$10×28799$建模数据提取模糊规则数量$m$作为 7 并分配输入的成员函数。然后，训练算法学习ANFIS模型的参数。输入肌肉协同作用的隶属函数$y_1(t−1),y_2(t−1),y_3(t−1),y_4(t−1),y_5(t−1),y_1(t),y_2(t),y_3(t),y_4(t)$和$y_5(t)$，优化的肌肉协同作用驱动的ANFIS模型如下图所示。
+>
+> ![img](zhang4-3158727-large.gif)
+>
+> 提取的模糊规则和前提参数$c _l^i$和$\sigma _l^i$，如下表所示。
+>
+> ![img](zhang.t1-3158727-large.gif)
+>
+> ![img](zhang.t2-3158727-large.gif)
 
 ### 肌肉激活模型
 
-> ?> 经典模型，没有任何新东西。参数值可以学习。
+> ?> 经典模型，没有任何新东西。参数值的选取可以学习。
 
 
 
@@ -221,17 +236,17 @@
 > \end{equation*}
 > $$
 > 
-> 其中A是处理肌肉激活特征的非线性参数。基于研究[43]参数设置如下：$d = 10 ms$， $\gamma _1=−0.033$，$\gamma _2=−0.019$，$A =−3$。
+> 其中A是处理肌肉激活特征的非线性参数。**基于研究[43]参数设置如下**：$d = 10 ms$， $\gamma _1=−0.033$，$\gamma _2=−0.019$，$A =−3$。
 
 ### 性能评估
 
-> ?>核心观点与说明
+> ?> 这一部分可以参考，实验结果要比较三方面。
 
 
 
 > [!Note] 
 >
-> 估计膝盖角度的质量使用四个指标进行评估，即均方根误差 (root mean square error, RMSE)、相关系数(correlation coefficient, $\rho$)、*R* 平方 (R-square, $R^2$)，以及步态周期的推理计算时间。公式如下：
+> 估计膝盖角度的质量使用**四个指标进行评估**，即均方根误差 (root mean square error, RMSE)、相关系数(correlation coefficient, $\rho$)、*R* 平方 (R-square, $R^2$)，以及步态周期的推理计算时间。公式如下：
 > $$
 > \begin{equation*}
 > {\rm{RMSE = }}\sqrt {\frac{{\sum\nolimits_{i = 1}^N {{{\left({{\theta _{\mathrm{M}}} - {\theta _{\text{EST}}}} \right)}^2}} }}{N}} \tag{24}
@@ -253,16 +268,38 @@
 > $$
 > 其中，$S Sres$是测量值和估计值之间的总和回归误差。$S Stot$是测量值和测量值平均值之间的总误差之和平方。$R^2$可以反映模型的质量。其值范围为 [0, 1]。指数越接近1，模型对实测结果的解释能力越强。
 >
-> 进行了单因素方差分析(one-way ANOVA)和Kruskal-Wallis检验，以提供0.05的显着水平下的统计分析。
+> 进行了**单因素方差分析(one-way ANOVA)和Kruskal-Wallis检验**，以提供0.05的显着水平下的统计分析。
 
 
-### 内容标题
+### 膝关节预测结果
 
 > ?>核心观点与说明
 
 
 
 > [!Note] 
+>
+> 下图是所提方法分别与常用时域特征WL、MAV和WL+MAV的预测结果。在 ANFIS 模型中使用 MAV、WL 和 MAV+WL 时，估计角度和目标角度之间存在更大的跟踪偏差。所提出的肌肉协同驱动ANFIS模型取得了良好的跟踪性能和更高的预测精度。
+>
+> ![Fig. 7.](zhang7-3158727-large.gif)
+>
+> ![Fig. 8.](zhang8-3158727-large.gif)
+>
+> ![img](zhang.t3-3158727-large.gif)
+>
+
+### 同行比较
+
+> ?>这一部分写的不多，但是要对比也是要最起码有四条。
+
+
+> [!Note] 
+>
+> 与相关研究相比，提出的方法的性能总结下图中。如文献[13]和[14]中的研究利用传感器融合技术(表面肌电信号和其他传感数据)来预测膝关节角度，这比仅利用表面肌电信号性能更好。此外，研究[10]和[11]只从表面肌电信号中提取特征，以获得肌肉协同和低维空间等神经信息来预测关节运动。然后，研究将低维协同空间与关节运动联系起来，**以实现最先进的性能(achieve state-of-the-art performance)**。因此，利用表面肌电信号中的神经信息来检测人体的运动意图可能在未来值得进一步关注。它还为无缝人机交互提供了一条可行的途径，有助于将这种方法过渡到机器人应用和临床实践。
+>
+> ![img](zhang.t4-3158727-large.gif)
 
 
 ## 参考文献
+
+W. Zhong, X. Fu and M. Zhang, "A Muscle Synergy-Driven ANFIS Approach to Predict Continuous Knee Joint Movement," in *IEEE Transactions on Fuzzy Systems*, vol. 30, no. 6, pp. 1553-1563, June 2022, doi: 10.1109/TFUZZ.2022.3158727.
