@@ -33,14 +33,24 @@
 | 2015 | [模拟植入式被动机制，以改变肌肉和肌腱之间的力和运动传递](https://ieeexplore.ieee.org/document/7078960) | [IEEE Transactions on Biomedical Engineering](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=10) | Preparing | [Taymaz Homayouni](https://ieeexplore.ieee.org/author/37085513440)俄勒冈州立大学 ||
 | 2022 | [肌肉协同驱动的ANFIS方法预测连续膝关节运动](/review/9735420/index) | [IEEE Transactions on Fuzzy Systems](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=91) | Done | [Mingming Zhang](https://ieeexplore.ieee.org/author/37085459780)南方科技大学 ||
 | 2021 | [慢性中风幸存者上肢肌肉网络的改变](/review/9416511/index) | [IEEE Transactions on Neural Systems and Rehabilitation Engineering](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=7333) | ToDo | [Ping Zhou](https://ieeexplore.ieee.org/author/37330883000)青岛康复大学 ||
-|      |                                                              |                                                              |           |                                                              ||
-|      |                                                              |                                                              |           |                                                              ||
-|      |                                                              |                                                              |           |                                                              ||
-|      |                                                              |                                                              |           |                                                              ||
-|      |                                                              |                                                              |           |                                                              ||
-|      |                                                              |                                                              |           |                                                              ||
-|      |                                                              |                                                              |           |                                                              ||
-|      |                                                              |                                                              |           |                                                              ||
+| 2022 | [通过物理知识转移促进个性化肌肉骨骼建模](https://ieeexplore.ieee.org/document/9975275) | [IEEE Transactions on Instrumentation and Measurement](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=19) | Preparing | Jie Zhang 利兹大学\北科 ||
+| 2022 |[基于物理的肌肉骨骼建模深度学习:从表面肌电图预测肌肉力量和关节运动学](https://ieeexplore.ieee.org/document/9970372) | [IEEE Transactions on Neural Systems and Rehabilitation Engineering](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=7333) | Preparing | Jie Zhang 利兹大学\北科 ||
+| 2022 | [基于多源域自适应和BP神经网络的表面肌电信号关节角独立连续估计](https://ieeexplore.ieee.org/document/9964332) | [IEEE Transactions on Instrumentation and Measurement](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=19) | Preparing | [Shuxiang Guo](https://orcid.org/0000-0002-0607-9798)北京理工大学 ||
+|    |    |     |    |     ||
+|    |    |     |    |     ||
+|    |    |     |    |     ||
+|    |    |     |    |     ||
+|    |    |     |    |     ||
+|    |    |     |    |     ||
+|    |    |     |    |     ||
+|    |    |     |    |     ||
+|    |    |     |    |     ||
+|    |    |     |    |     ||
+|    |    |     |    |     ||
+|    |    |     |    |     ||
+|    |    |     |    |     ||
+|    |    |     |    |     ||
+|    |    |     |    |     ||
 
 
 
