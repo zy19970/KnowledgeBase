@@ -36,7 +36,7 @@
 | 2022 | [通过物理知识转移促进个性化肌肉骨骼建模](https://ieeexplore.ieee.org/document/9975275) | [IEEE Transactions on Instrumentation and Measurement](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=19) | Preparing | Jie Zhang 利兹大学\北科 ||
 | 2022 |[基于物理的肌肉骨骼建模深度学习:从表面肌电图预测肌肉力量和关节运动学](https://ieeexplore.ieee.org/document/9970372) | [IEEE Transactions on Neural Systems and Rehabilitation Engineering](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=7333) | Preparing | Jie Zhang 利兹大学\北科 ||
 | 2022 | [基于多源域自适应和BP神经网络的表面肌电信号关节角独立连续估计](https://ieeexplore.ieee.org/document/9964332) | [IEEE Transactions on Instrumentation and Measurement](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=19) | Preparing | [Shuxiang Guo](https://orcid.org/0000-0002-0607-9798)北京理工大学 ||
-|    |    |     |    |     ||
+| 2023 | [动力学与Hill模型相结合用于功能性电刺激踝关节角度预测](/review/9732642/index) | [IEEE Journal of Biomedical and Health Informatics](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6221020) | Doing | [Xianghong Zhang](https://ieeexplore.ieee.org/author/37088950313)福州大学 ||
 |    |    |     |    |     ||
 |    |    |     |    |     ||
 |    |    |     |    |     ||
