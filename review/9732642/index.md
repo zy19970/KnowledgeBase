@@ -6,7 +6,7 @@
 | :---------- | ------------------------------------------------------------ |
 | 年份        | 2023                                                         |
 | 作者        | [Xianghong Zhang](https://ieeexplore.ieee.org/author/37088950313) 福州大学物理与信息工程学院 |
-| 状态        | 正在做                                                       |
+| 状态        | 完善中                                                       |
 | 期刊        | [IEEE Journal of Biomedical and Health Informatics](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6221020) |
 
 ## 摘要
